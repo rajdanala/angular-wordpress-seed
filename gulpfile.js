@@ -25,11 +25,16 @@ var config = require('./config.json'),
     PATHS = config.PATHS;
 
 var VENDOR_SCRIPTS = [
+    'bower_components/jquery/dist/jquery.js',
     'bower_components/modernizr/modernizr-custom.js',
     'bower_components/angular/angular.js',
     'bower_components/angular-animate/angular-animate.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
-    'bower_components/angular-utils-pagination/dirPagination.js'
+    'bower_components/angular-utils-pagination/dirPagination.js',
+    'bower_components/bootstrap/dist/js/bootstrap.js',
+    'bower_components/bootstrap/js/carousel.js'
+    
+    
 ];
 
 var log = function(message) {
@@ -117,7 +122,13 @@ gulp.task('styles', function() {
             .pipe(less())
             .pipe(autoprefixer());
 
-        vendorStyles = gulp.src(['bower_components/pure/pure.css', 'bower_components/pure/grids-responsive.css']);
+        vendorStyles = gulp.src(
+            ['bower_components/pure/pure.css', 
+            'bower_components/pure/grids-responsive.css',
+            'bower_components/bootstrap/dist/css/bootstrap.css',
+             'bower_components/bootstrap/dist/css/bootstrap-theme.css',
+             'src/assets/css/carousle.css'
+            ]);
 
         merge(vendorStyles, appStyles)
             .pipe(gulp.dest('build/styles'))

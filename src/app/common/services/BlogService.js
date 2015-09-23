@@ -16,6 +16,13 @@ function BlogService($http, $sce, config) {
     function allPostsByTag(tag) {
         return getData('posts?filter[category_name]=post&filter[tag]=' + tag);
     }
+    
+    function getPageBySlug(slug) {
+        return getData('pages/'+slug);
+    }
+    function allPages() {
+        return getData('pages?filter[type]=page');
+    }
 
     function allPostsBySearchTerm(searchTerm) {
         return getData('posts?filter[category_name]=post&filter[s]=' + searchTerm);
@@ -59,6 +66,8 @@ function BlogService($http, $sce, config) {
     return {
         allPosts: allPosts,
         allPostsByTag: allPostsByTag,
+        getPageBySlug: getPageBySlug,
+        allPages: allPages,
         allPostsBySearchTerm: allPostsBySearchTerm,
         featuredPosts: featuredPosts,
         post: post

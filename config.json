@@ -3,7 +3,7 @@
     "build": {
       "siteUrl": "http://localhost/angular-wordpress-seed/build/",
       "basePath": "/angular-wordpress-seed/build/",
-      "apiUrl": "http://localhost/wordpress/wp-json/"
+      "apiUrl": "http://localhost:8888/gvlrealty/wp-json/"
     },
     "dist": {
       "siteUrl": "http://www.example.com/",

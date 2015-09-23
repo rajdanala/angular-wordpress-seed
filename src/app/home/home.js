@@ -3,10 +3,11 @@
 function HomeController(BlogService, MetadataService) {
     var vm = this;
 
-    vm.featuredPosts = [];
-
-    BlogService.featuredPosts().then(function(posts) {
-        vm.featuredPosts = posts;
+    vm.homePage = [];
+    
+    BlogService.getPageBySlug('services').then(function(posts) {
+        vm.homePage = posts;
+       
     });
 
     // pass an empty object to use the defaults.
